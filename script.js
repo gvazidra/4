@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let stepCount = 0;
 
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(button => button.disabled = true);
 
         function drawStep() {
             if (stepCount <= steps) {
@@ -186,6 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (stepCount <= steps) {
                     setTimeout(drawStep, 100);
+                } else {
+                    buttons.forEach(button => button.disabled = false);
                 }
             }
         }
