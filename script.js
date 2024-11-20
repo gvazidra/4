@@ -180,12 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 drawPixel(Math.round(x), Math.round(y));
 
-
                 x += xIncrement;
                 y += yIncrement;
-
+                
                 stepCount++;
-
 
                 if (stepCount <= steps) {
                     setTimeout(drawStep, 100);
