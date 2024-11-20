@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алгоритмы растеризации</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-$END$
+<div class="container">
+  <h1>Иллюстрация растровых алгоритмов</h1>
+  <div class="controls">
+    <label for="algorithm-select">Выберите алгоритм:</label>
+    <select id="algorithm-select">
+      <option value="step-by-step">Пошаговый алгоритм</option>
+      <option value="dda">Алгоритм ЦДА</option>
+      <option value="bresenham-line">Алгоритм Брезенхема (отрезок)</option>
+      <option value="bresenham-circle">Алгоритм Брезенхема (окружность)</option>
+      <option value="casteljau">Алгоритм Кастеля-Питвея (кривая Безье)</option>
+    </select>
+
+    <div class="coords-input">
+      <label for="x0">Координаты (x0, y0) - Начало:</label>
+      <input type="number" id="x0" placeholder="x0" value="10">
+      <input type="number" id="y0" placeholder="y0" value="10">
+    </div>
+
+    <div class="coords-input">
+      <label for="x1">Координаты (x1, y1) - Конец:</label>
+      <input type="number" id="x1" placeholder="x1" value="50">
+      <input type="number" id="y1" placeholder="y1" value="40">
+    </div>
+
+    <div class="buttons">
+      <button id="draw-btn">Нарисовать</button>
+      <button id="clear-btn">Очистить</button>
+    </div>
+
+    <div class="zoom-controls">
+      <button id="zoom-in-btn">Увеличить</button>
+      <button id="zoom-out-btn">Уменьшить</button>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="canvas" width="800" height="600"></canvas>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
